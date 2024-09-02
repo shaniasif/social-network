@@ -1,0 +1,41 @@
+<!-- רשימת התגובות -->
+<div class="comment-list">
+  
+    <!-- מיכל לתגובות -->
+    <div class="comments-container">
+      
+      <!-- לולאת ngFor ליצירת פריטים עבור כל תגובה ברשימה -->
+      <div *ngFor="let comment of displayedComments" class="comment">
+        
+        <!-- תצוגה של תגובה עם שם המחבר ותוכן התגובה -->
+        <p><strong>{{ comment.authorName }}:</strong> {{ comment.content }}</p>
+      </div>
+    </div>
+  
+    <!-- כפתור הוספת תגובה יוצג רק אם יש מזהה פוסט -->
+    <button *ngIf="postId !== null" (click)="showAddCommentForm()" class="add-comment-button">+</button>
+    
+    <!-- טופס הוספת תגובה יוצג רק אם showForm הוא true -->
+    <div *ngIf="showForm" class="add-comment-form">
+      <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+        <div>
+          <!-- תווית ושדה עבור שם המחבר -->
+          <label for="authorName">Author's Name:</label>
+          <input id="authorName" formControlName="authorName" required />
+        </div>
+        <div>
+          <!-- תווית ושדה עבור כותרת הפוסט -->
+          <label for="postTitle">Post Title:</label>
+          <input id="postTitle" formControlName="postTitle" readonly />
+        </div>
+        <div>
+          <!-- תווית ושדה עבור תוכן התגובה -->
+          <label for="content">Comment Content:</label>
+          <textarea id="content" formControlName="content" required></textarea>
+        </div>
+        <!-- כפתור שליחה של הטופס -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  

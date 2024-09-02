@@ -1,0 +1,19 @@
+<!-- טופס הוספת תגובה -->
+<form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+  
+    <!-- שדה להזנת שם המחבר -->
+    <label for="authorName">Author's Name:</label>
+    <input id="authorName" formControlName="authorName" />
+    
+    <!-- שדה להצגת כותרת הפוסט -->
+    <label for="postTitle">Post Title:</label>
+    <input id="postTitle" formControlName="postTitle" [value]="postTitle" readonly />
+    
+    <!-- שדה להזנת תוכן התגובה -->
+    <label for="commentContent">Comment Content:</label>
+    <textarea id="commentContent" formControlName="commentContent"></textarea>
+    
+    <!-- כפתור לשליחת הטופס -->
+    <button type="submit">Submit</button>
+  </form>
+  
