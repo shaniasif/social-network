@@ -1,8 +1,14 @@
+<app-author-list (authorSelected)="onAuthorSelected($event)"></app-author-list> 
+
+<router-outlet></router-outlet>
+
 <!-- רכיב לרשימת המחברים -->
-<app-author-list (authorSelected)="onAuthorSelected($event)"></app-author-list>
+
 
 <!-- רכיב לרשימת הפוסטים, בהתאם למחבר שנבחר -->
-<app-post-list [authorId]="selectedAuthorId" (postSelected)="onPostSelected($event)"></app-post-list>
+
+<!-- <app-post-list [authorId]="selectedAuthorId" (postSelected)="onPostSelected($event)"></app-post-list>  -->
 
 <!-- רכיב לרשימת התגובות, בהתאם לפוסט שנבחר -->
-<app-comment-list [postId]="selectedPostId" [postTitle]="selectedPostTitle"></app-comment-list>
+
+ <!-- <app-comment-list [postId]="selectedPostId" [postTitle]="selectedPostTitle"></app-comment-list> -->

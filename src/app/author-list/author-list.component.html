@@ -1,18 +1,19 @@
-
-  <!-- רשימת המחברים -->
+<!-- רשימת המחברים -->
 <div class="author-list">
   
-    <!-- כותרת הדף -->
-    <h1 class="page-title">Authors</h1>
+  <!-- כותרת הדף -->
+  <h1 class="page-title">Authors</h1>
+  
+  <!-- לולאת ngFor ליצירת פריטים עבור כל מחבר ברשימה -->
+  <div *ngFor="let author of authors" class="author">
     
-    <!-- לולאת ngFor ליצירת פריטים עבור כל מחבר ברשימה -->
-    <div *ngFor="let author of authors" class="author" (click)="selectAuthor(author.id)">
-      
+    <a (click)="navigateToAuthorPost(author)">
       <!-- תמונה של המחבר -->
       <img [src]="author.picture" [alt]="author.name" class="author-picture" />
       
       <!-- שם המחבר -->
       <p>{{ author.name }}</p>
-    </div>
+    </a>
+
   </div>
-  
+</div>

@@ -1,10 +1,26 @@
-/* הגדרת צבע ורוד אחיד לכל האפליקציה */
-:root {
-    --main-color: #ff66b2;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #ffe6f0; /* צבע ורוד בהיר */
-  }
-  
+/* General Styles for the App */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f4f9;
+}
+
+h1, h2, h3 {
+  color: #d36c7c;
+}
+
+a {
+  text-decoration: none;
+  color: #d36c7c;
+}
+
+a:hover {
+  color: #b54e6f;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

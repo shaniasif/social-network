@@ -1,9 +1,23 @@
 <!-- הצגת כותרת רשימת הפוסטים רק כאשר מחבר נבחר -->
 <div *ngIf="authorId !== null">
-    <h2>Post List</h2>
-    <div *ngFor="let post of displayedPosts" class="post" (click)="selectPost(post)">
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.content }}</p>
-    </div>
-  </div>
+  <!-- הצגת כותרת של רשימת הפוסטים -->
+  <h2>Post List</h2>
   
+  <!-- לולאת ngFor להציג כל פוסט מתוך הפוסטים המוצגים -->
+  <div *ngFor="let post of displayedPosts" class="post">
+    <!-- קישור לפוסט באמצעות click event -->
+    <a (click)="putValueInPostIdAndPostTitle(post)">
+      <!-- הצגת כותרת הפוסט -->
+      <h3>{{ post.title }}</h3>
+      <!-- הצגת תוכן הפוסט -->
+      <p>{{ post.content }}</p>
+    </a>
+  </div>
+
+  <!-- הצגת קומפוננטת רשימת התגובות רק כאשר פוסט נבחר -->
+  <div class="give-me-class-later" *ngIf="isPostClicked">
+    <!-- קישור לקומפוננטת רשימת התגובות עם מזהה הפוסט וכותרת הפוסט -->
+    <app-comment-list [postId]="currentPostId" [postTitle]="currentPostTitle"></app-comment-list>
+  </div>
+
+</div>

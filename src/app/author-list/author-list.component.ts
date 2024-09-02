@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 // הגדרת ממשק למחברים, כולל מזהה, שם ותמונה
 interface Author {
@@ -13,6 +14,10 @@ interface Author {
   styleUrls: ['./author-list.component.css']
 })
 export class AuthorListComponent {
+  constructor(
+    private router: Router
+  ) {}
+
   @Output() authorSelected = new EventEmitter<number>(); // אירוע שמתרחש כאשר מחבר נבחר
 
   // רשימת המחברים
@@ -24,8 +29,9 @@ export class AuthorListComponent {
     { id: 5, name: 'Eli', picture: 'assets/eli.jpg' }
   ];
 
-  // פונקציה לבחירת מחבר
-  selectAuthor(authorId: number): void {
-    this.authorSelected.emit(authorId); // שליחה של מזהה המחבר הנבחר
+
+  // פונקציה לניווט לדף הפוסטים עבור מחבר נבחר
+  navigateToAuthorPost(author: Author): void {
+    this.router.navigate(['/posts', author.id]); // ניווט לדף הפוסטים עם מזהה המחבר הנבחר
   }
 }

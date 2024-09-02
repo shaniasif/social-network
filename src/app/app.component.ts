@@ -16,7 +16,7 @@ interface Post {
 export class AppComponent {
   selectedAuthorId: number | null = null; // מזהה המחבר שנבחר, אם קיים
   selectedPostId: number | null = null; // מזהה הפוסט שנבחר, אם קיים
-  selectedPostTitle: string = ''; // כותרת הפוסט שנבחר
+  selectedPostTitle: string = ''; // כותרת הפוסט. שנבחר
 
   // פונקציה שמתעדכנת כאשר נבחר מחבר חדש
   onAuthorSelected(authorId: number): void {

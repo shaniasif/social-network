@@ -1,75 +1,63 @@
-/* עיצוב של רשימת התגובות */
+/* סגנונות עבור רשימת התגובות */
 .comment-list {
-    margin-top: 20px; /* מרווח של 20 פיקסלים מעל הרשימה */
-  }
-  
-  /* מיכל לתגובות */
-  .comments-container {
-    margin-bottom: 20px; /* מרווח של 20 פיקסלים מתחת למיכל התגובות */
-  }
-  
-  /* עיצוב של תגובה בודדת */
-  .comment {
-    border-bottom: 1px solid #ddd; /* קו גבול תחתון בגובה של פיקסל בצבע אפור בהיר */
-    padding: 10px 0; /* ריפוד של 10 פיקסלים למעלה ולמטה */
-  }
-  
-  /* עיצוב של טקסט בתוך תגובה */
-  .comment p {
-    margin: 0; /* ביטול המרווחים סביב הפסקה */
-    color: #444; /* צבע טקסט כהה יותר לקריאות טובה */
-    font-size: 14px; /* גודל גופן של 14 פיקסלים */
-  }
-  
-  /* עיצוב של טקסט מודגש בתוך תגובה */
-  .comment strong {
-    color: #333; /* צבע טקסט כהה יותר עבור טקסט מודגש */
-  }
-  
-  /* עיצוב של כפתור הוספת תגובה */
-  .add-comment-button {
-    background-color: #ff4081; /* צבע ורוד לכפתור */
-    color: white; /* צבע טקסט לבן */
-    border: none; /* ביטול הגבול סביב הכפתור */
-    padding: 10px 15px; /* ריפוד פנימי של 10 פיקסלים למעלה ולמטה, 15 פיקסלים מצדדים */
-    border-radius: 50%; /* יצירת צורת עיגול לכפתור */
-    cursor: pointer; /* שינוי הסמן בעת ריחוף מעל הכפתור */
-    font-size: 20px; /* גודל גופן של 20 פיקסלים */
-    margin-top: 20px; /* מרווח של 20 פיקסלים מעל הכפתור */
-  }
-  
-  /* עיצוב של טופס הוספת תגובה */
-  .add-comment-form {
-    margin-top: 20px; /* מרווח של 20 פיקסלים מעל הטופס */
-  }
-  
-  /* עיצוב של אלמנטים בתוך טופס הוספת תגובה */
-  .add-comment-form form div {
-    margin-bottom: 10px; /* מרווח של 10 פיקסלים מתחת לכל אלמנט בתוך הטופס */
-  }
-  
-  /* עיצוב של תוויות בטופס */
-  .add-comment-form label {
-    display: block; /* הצגת התווית כבלוק */
-    margin-bottom: 5px; /* מרווח של 5 פיקסלים מתחת לתווית */
-  }
-  
-  /* עיצוב של שדות הקלט והטקסטה בטופס */
-  .add-comment-form input, .add-comment-form textarea {
-    width: 100%; /* רוחב מלא של השדה בתוך הטופס */
-    padding: 8px; /* ריפוד פנימי של 8 פיקסלים */
-    border: 1px solid #ddd; /* גבול דק בצבע אפור בהיר */
-    border-radius: 4px; /* קצוות מעוגלים של השדה */
-  }
-  
-  /* עיצוב של כפתור השליחה בטופס */
-  .add-comment-form button {
-    background-color: #ff4081; /* צבע ורוד לכפתור */
-    color: white; /* צבע טקסט לבן */
-    border: none; /* ביטול הגבול סביב הכפתור */
-    padding: 10px 20px; /* ריפוד פנימי של 10 פיקסלים למעלה ולמטה, 20 פיקסלים מצדדים */
-    border-radius: 4px; /* קצוות מעוגלים של הכפתור */
-    cursor: pointer; /* שינוי הסמן בעת ריחוף מעל הכפתור */
-    font-size: 16px; /* גודל גופן של 16 פיקסלים */
-  }
-  
+  padding: 20px; /* ריפוד מסביב לרשימה */
+  background-color: #fce4ec; /* צבע רקע ורוד בהיר */
+}
+
+.comments-container {
+  margin-bottom: 20px; /* רווח בין מיכל התגובות לשאר התוכן */
+}
+
+.comment {
+  border: 1px solid #d81b60; /* גבול ורוד מסביב לכל תגובה */
+  border-radius: 8px; /* קימור פינות */
+  padding: 10px; /* ריפוד פנימי */
+  margin-bottom: 10px; /* רווח בין תגובות */
+  background-color: #fff; /* צבע רקע לבן */
+}
+
+.comment p {
+  margin: 0; /* ביטול רווחים סביב טקסט */
+  color: #333; /* צבע טקסט של התגובה */
+}
+
+.add-comment-button {
+  background-color: #d81b60; /* צבע רקע של כפתור הוספת תגובה */
+  color: #fff; /* צבע טקסט של כפתור הוספת תגובה */
+  border: none; /* ביטול גבולות כפתור */
+  padding: 10px; /* ריפוד סביב כפתור */
+  border-radius: 50%; /* יצירת כפתור עגלגל */
+  cursor: pointer; /* הצגת סמן יד כאשר מרחפים מעל הכפתור */
+  font-size: 20px; /* גודל טקסט בכפתור */
+}
+
+.add-comment-button:hover {
+  background-color: #c2185b; /* צבע רקע כהה יותר כאשר מרחפים מעל הכפתור */
+}
+
+.add-comment-form {
+  border: 1px solid #d81b60; /* גבול ורוד מסביב לטופס */
+  border-radius: 8px; /* קימור פינות */
+  padding: 20px; /* ריפוד פנימי */
+  background-color: #fff; /* צבע רקע לבן */
+}
+
+.add-comment-form label {
+  display: block; /* הצגת תווית כאובייקט נפרד */
+  margin-bottom: 5px; /* רווח בין התווית לשדה */
+  color: #333; /* צבע טקסט של תוויות */
+}
+
+.add-comment-form input,
+.add-comment-form textarea {
+  width: 100%; /* רמת רוחב של שדות הכניסה */
+  padding: 10px; /* ריפוד סביב השדות */
+  border: 1px solid #d81b60; /* גבול ורוד סביב השדות */
+  border-radius: 5px; /* קימור פינות של שדות */
+  margin-bottom: 10px; /* רווח בין שדות */
+}
+
+.add-comment-form textarea {
+  height: 100px; /* גובה של שדה הטקסט */
+  resize: vertical; /* אפשרות לשנות גובה */
+}

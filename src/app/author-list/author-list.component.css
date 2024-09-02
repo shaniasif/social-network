@@ -1,48 +1,88 @@
-/* עיצוב של רשימת המחברים */
+/* סגנונות עבור דף עיקרי */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* צבע רקע בהיר לדף כולו */
+}
+
+.authors-top-section {
+  width: 100%; /* תופס את כל רוחב הדף */
+  background-color: #fce4ec; /* צבע רקע ורוד בהיר */
+  padding: 40px 20px; /* ריפוד פנימי גדול יותר */
+  border-radius: 10px; /* קימור פינות */
+  margin-bottom: 30px; /* רווח מתחת לרשימה */
+}
+
+.page-title {
+  color: #d81b60; /* צבע כותרת הדף */
+  text-align: center; /* יישור טקסט למרכז */
+  font-size: 2.5em; /* גודל טקסט גדול יותר לכותרת */
+  margin-bottom: 30px; /* רווח מתחת לכותרת */
+  font-weight: bold; /* הדגשת כותרת */
+}
+
 .author-list {
-    display: flex; /* שימוש ב-Flexbox ליצירת פריסה של פריטים בצורה גמישה */
-    flex-wrap: wrap; /* התמקמות מחדש של פריטים בשורות נוספות אם אין מספיק מקום באותה שורה */
-    gap: 20px; /* רווח בין פריטים ברשימה */
-    padding: 20px; /* ריפוד פנימי של הרשימה */
-    background-color: #f9f9f9; /* צבע רקע  */
-    justify-content: center; /* מיקום מרכזי של פריטים אופקית */
-  }
-  
-  /* עיצוב של פריט בודד ברשימה */
-  .author {
-    text-align: center; /* טקסט מיושר למרכז */
-    width: 180px; /* קביעת רוחב לפריט */
-    cursor: pointer; /* שינוי הסמן כאשר עכבר עובר על הפריט, מה שמעיד על כך שניתן ללחוץ עליו */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציות חלקות עבור שינוי גודל וצילון */
-  }
-  
-  /* עיצוב של פריט בעת ריחוף עם העכבר */
-  .author:hover {
-    transform: scale(1.05); /* הגדלה קלה של הפריט בעת ריחוף */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל סביב הפריט בעת ריחוף */
-  }
-  
-  /* עיצוב של תמונת המחבר */
-  .author img {
-    width: 120px; /* גובה קבוע לתמונה */
-    height: 120px; /* גובה קבוע לתמונה */
-    border-radius: 50%; /* יצירת צורת עיגול לתמונה */
-    border: 3px solid #ff69b4; /* מסגרת ורודה סביב התמונה */
-    object-fit: cover; /* התאמת התמונה כדי שתכסה את העיגול מבלי לעוות את התמונה */
-  }
-  
-  /* עיצוב של טקסט מתחת לתמונה */
-  .author p {
-    margin: 10px 0 0; /* מרווח של 10 פיקסלים למעלה וללא מרווח בצדדים ובחלק התחתון */
-    color: #333; /* צבע טקסט כהה לקריאות טובה יותר */
-    font-size: 16px; /* גודל גופן מותאם */
-  }
-  
-  /* עיצוב כותרת הדף */
-  .page-title {
-    text-align: center; /* מיקום מרכזי של הכותרת */
-    font-size: 2rem; /* גודל גופן מותאם */
-    color: #ff69b4; /* צבע טקסט ורוד */
-    margin-bottom: 20px; /* מרווח תחתון של 20 פיקסלים מתחת לכותרת */
-  }
-  
+  display: flex;
+  flex-wrap: wrap; /* תצוגת תצוגת גלילה אם יש יותר מדי מחברים */
+  justify-content: center; /* יישור מרכזי */
+}
+
+.author {
+  display: flex; /* הצגת פריטים בשורה אחת */
+  align-items: center; /* יישור פריטים באמצע */
+  margin: 15px; /* רווח בין פריטים */
+  border: 3px solid #d81b60; /* גבול ורוד מסביב לכל פריט */
+  border-radius: 12px; /* קימור פינות */
+  padding: 20px; /* ריפוד פנימי */
+  background-color: #fff; /* צבע רקע לבן */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* הצללה עדינה */
+  transition: transform 0.3s, box-shadow 0.3s; /* אנימציה בזמן מעבר */
+  max-width: 300px; /* רוחב מקסימלי של פריט */
+  text-align: center; /* יישור טקסט למרכז */
+}
+
+.author:hover {
+  transform: translateY(-8px); /* הזזת פריט למעלה כשמעליו */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* הצללה בולטת יותר */
+}
+
+.author img {
+  border-radius: 50%; /* יצירת תמונה עגלגלה */
+  width: 100px; /* גובה תמונה */
+  height: 100px; /* רוחב תמונה */
+  object-fit: cover; /* חיתוך התמונה בצורה מתאימה */
+}
+
+.author-info {
+  margin-top: 15px; /* רווח בין התמונה לשם המחבר */
+}
+
+.author-name {
+  font-size: 1.5em; /* גודל טקסט של שם המחבר */
+  color: #d81b60; /* צבע שם המחבר */
+  margin: 0; /* ביטול רווחים סביב טקסט */
+  font-weight: bold; /* הדגשת שם המחבר */
+}
+
+.posts-title {
+  font-size: 2em;
+  color: #d81b60;
+  margin-bottom: 20px;
+}
+
+.posts-section, .comments-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.comments-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
